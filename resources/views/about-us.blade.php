@@ -48,7 +48,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{$user['name'] . " " . $user['surname']}}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">$user['role']</h6>
-                                    <a href="#" class="card-link">{{route('aboutUsDetail', ['name'=>$user['name']])}} Scopri di più</a>
+                                    <a href="{{route('aboutUsDetail', ['name'=>$user['name']])}}" class="card-link"> Scopri di più</a>
                                 </div>
                             </div>
                         </div>

@@ -44,7 +44,7 @@
                                 <h5 class="card-title">{{$prodotto['name']}}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{$prodotto['description']}}</h6>
                                 <h6 class="card-subtitle mb-2 text-muted">{{$prodotto['price']}}</h6>
-                                <a href="#" class="card-link">{{route('prodottiDetail', ['prodotto'=>$prodotto['id']])}} Scopri di più</a>                            
+                                <a href="{{route('prodottiDetail', ['prodotto'=>$prodotto['id']])}}" class="card-link"> Scopri di più</a>                            
                             </div>
                         </div>
                     </div>
