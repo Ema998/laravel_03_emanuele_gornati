@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AboutUsController;
-use App\Http\Controllers\ProdottiContoller;
+use App\Http\Controllers\ProdottiController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
@@ -15,4 +15,4 @@ Route::get('/chi-siamo/detail/{name}', [AboutUsController::class, 'aboutUsDetail
 
 Route::get('/prodotti', [PublicController::class, 'prodotti'])->name('prodotti');
 
-Route::get('/prodotti/detail/{id}', [ProdottiController::class, 'prodottiDetail'])->name('prodottiDetail')
+Route::get('/prodotti/detail/{id}', [ProdottiController::class, 'prodottiDetail'])->name('prodottiDetail');
