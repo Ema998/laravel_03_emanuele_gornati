@@ -1,0 +1,57 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('index');
+})->name('homepage');
+
+Route::get('chi-siamo', function () {
+    $users = [
+        ['name'=> 'Silvio', 'surname'=> 'Rossi', 'role'=> 'ceo'],
+        ['name'=> 'Gianni', 'surname'=> 'Bianchi', 'role'=> 'frontman'],
+        ['name'=> 'Sandro', 'surname'=> 'Verdi', 'role'=> 'creativo'],
+    ];
+    return view('about-us', ['users'=>$users]);
+})->name('aboutUs');
+
+Route::get('contatti', function () {
+    return view('contatti');
+})->name('contatti');
+
+Route::get('/chi-siamo/detail/{name}', function($name){
+    $users = [
+        ['name'=> 'Silvio', 'surname'=> 'Rossi', 'role'=> 'ceo'],
+        ['name'=> 'Gianni', 'surname'=> 'Bianchi', 'role'=> 'frontman'],
+        ['name'=> 'Sandro', 'surname'=> 'Verdi', 'role'=> 'creativo'],
+    ];
+
+    foreach ($users as $user) {
+        if ($name == $user['name']) {
+            return view('about-us-detail', ['user'=>$user]);
+        }
+    }
+})->name('aboutUsDetail');
+
+Route::get('/prodotti', function () {
+    $prodotti = [
+        ['id'=> '1', 'name'=> 'Prodotto 1', 'description'=> 'Descrizione prodotto 1', 'price'=> 10.99],
+        ['id'=> '2', 'name'=> 'Prodotto 2', 'description'=> 'Descrizione prodotto 2', 'price'=> 20.99],
+        ['id'=> '3', 'name'=> 'Prodotto 3', 'description'=> 'Descrizione prodotto 3', 'price'=> 30.99],
+    ];
+    return view('prodotti');
+})->name('prodotti');
+
+Route::get('/prodotti/detail/{id}', function($id){
+    $prodotti = [
+        ['id'=> '1', 'name'=> 'Prodotto 1', 'description'=> 'Descrizione prodotto 1', 'price'=> 10.99],
+        ['id'=> '2', 'name'=> 'Prodotto 2', 'description'=> 'Descrizione prodotto 2', 'price'=> 20.99],
+        ['id'=> '3', 'name'=> 'Prodotto 3', 'description'=> 'Descrizione prodotto 3', 'price'=> 30.99],
+    ];
+
+    foreach ($prodotti as $prodotto) {
+        if ($id == $prodotto['id']) {
+            return view('prodotti-detail', ['prodotto'=>$prodotto]);
+        }
+    }
+})->name('prodottiDetail');
